@@ -1,6 +1,16 @@
-const app = require('./config/express')();
-const port = app.get('port');
+const express = require('express');
+const mongoose = require('mongoose');
 
-app.listen(port, () => {
-  console.log(`Servidor rodando na porta ${port}`)
+//Iniciando App
+const app = express();
+
+//Conectando ao Banco de Dados
+
+mongoose.connect('mongodb://localhost:27017/todoapi');
+
+//Criando rota
+app.get('/',(req, res) => {
+  res.send("Hello Wolrd NodeJS");
 });
+
+app.listen(3333);
