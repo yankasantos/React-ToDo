@@ -20,7 +20,7 @@ module.exports = {
             new: true
         });
 
-        return item;
+        return re.json(item);
     },
 
     async destroyItem(req, res){
