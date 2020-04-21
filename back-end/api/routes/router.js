@@ -10,5 +10,6 @@ routes.get("/task", TasksController.index);
 routes.get("/task/:id", TasksController.showItem);
 routes.post("/task", TasksController.createItem);
 routes.put("/task/:id", TasksController.update);
+routes.delete("/task/:id", TasksController.destroyItem);
 
 module.exports = routes;

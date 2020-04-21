@@ -24,7 +24,9 @@ module.exports = {
     },
 
     async destroyItem(req, res){
+        await Task.findByIdAndRemove(req.params.id);
 
+        return res.send();
     },
 
     async createItem(req, res){
