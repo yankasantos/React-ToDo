@@ -9,5 +9,6 @@ routes.get("/user", UsersController.index);
 routes.get("/task", TasksController.index);
 routes.get("/task/:id", TasksController.showItem);
 routes.post("/task", TasksController.createItem);
+routes.put("/task/:id", TasksController.update);
 
 module.exports = routes;

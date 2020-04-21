@@ -15,9 +15,23 @@ module.exports = {
         return res.json(item);
     },
 
+    async update(req, res){
+        const item = await Task.findByIdAndUpdate(req.params.id, req.body, {
+            new: true
+        });
+
+        return item;
+    },
+
+    async destroyItem(req, res){
+
+    },
+
     async createItem(req, res){
         const item = await Task.create(req.body);
 
         return res.json(item);
     }
+
+    
 };
