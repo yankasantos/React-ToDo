@@ -9,11 +9,15 @@ module.exports = {
         return res.json(tasks);
     },
     
-    async listItens(req, res){
+    async showItem(req, res){
+        const item = await Task.findById(req.params.id);
+
+        return res.json(item);
+    },
+
+    async createItem(req, res){
         const item = await Task.create(req.body);
 
         return res.json(item);
-
-
     }
 };
