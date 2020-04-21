@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 
+
 const Task = mongoose.model('Tasks');
 
 module.exports = {
     async index(req, res){
-        const tasks = await Task.find();
+        const {page} = req.query;
+        const tasks = await Task.paginate({},{page, limit: 10});
 
         return res.json(tasks);
     },
